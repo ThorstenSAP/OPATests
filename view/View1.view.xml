@@ -1,0 +1,50 @@
+<mvc:View controllerName="OPATest.OPATest.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Text text="someText" id="someText" />
+						<Button id="someButton" text="a button" press="changeText"/>
+						<Text text="{i18n>anotherText}" />
+						<VBox id="flexBox" renderType="Bare">
+							<Label text="Name" />
+							<Input id="firstInput" value="a"/>
+							
+							<Label text="Name" />
+							<Input id="secondInput" value="a"/>
+							
+							<Label text="Name" />
+							<Input id="thirdInput" value="b"/>
+							<Label text="Name" />
+							<Input id="fourthInput" value="b"/>
+						</VBox>
+						
+						<List id="listKeys" headerText="some input fields" width="50%" items="{sampleData>/keys}">
+							<CustomListItem>
+								<HBox renderType="Bare" alignItems="Center" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom" >
+									<Text text="{sampleData>id}" class="sapUiSmallMarginEnd">
+										<layoutData>
+											<FlexItemData growFactor="1" />
+										</layoutData>
+									</Text>
+									<Input value="{sampleData>key}">
+										<layoutData>
+											<FlexItemData growFactor="3" />
+										</layoutData>
+									</Input>
+									<Button icon="sap-icon://less" class="sapUiLargeMarginBegin" press="deleteInput">
+										<layoutData>
+											<FlexItemData growFactor="1" />
+										</layoutData>
+									</Button>
+								</HBox>
+							</CustomListItem>
+						</List>
+							<Button text="add Input " id="createInputButton" press="addInput"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
